@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+  color: #d1d1d1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+header {
+  padding: 2rem 1rem;
+  text-align: center;
+  background: radial-gradient(circle at top, #1e1e1e, #0f0f0f);
+  box-shadow: 0 0 20px #ff2e2e33;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: #ff2e2e;
+  text-shadow: 0 0 15px rgba(255, 46, 46, 0.5);
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  margin: 0 1rem;
+  color: #888;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ff2e2e;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: #ff2e2e;
+}
+
+main {
+  flex-grow: 1;
+  padding: 3rem 2rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: appear 1.5s ease forwards;
+}
+
+.card {
+  background: linear-gradient(to bottom right, #2a2a2a, #111);
+  border-radius: 1.2rem;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(255, 46, 46, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 14px 35px rgba(255, 46, 46, 0.15);
+}
+
+.card h3 {
+  color: #ff2e2e;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  color: #ccc;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #0f0f0f;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.glow {
+  color: #ff2e2e;
+  text-shadow: 0 0 5px #ff2e2e88;
+}
